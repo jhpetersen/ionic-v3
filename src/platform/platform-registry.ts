@@ -1,7 +1,7 @@
 import { InjectionToken } from '@angular/core';
 
 import { Platform, PlatformConfig } from './platform';
-import { isCordova, isElectron, isIos, isIosUIWebView } from './platform-utils';
+import { isCordova, isElectron, isIos, isIosUIWebView, isIpad, isIphone } from './platform-utils';
 
 
 export const PLATFORM_CONFIGS: { [key: string]: PlatformConfig } = {
@@ -120,7 +120,7 @@ export const PLATFORM_CONFIGS: { [key: string]: PlatformConfig } = {
       keyboardResizes: keyboardResizes,
     },
     isMatch(plt: Platform) {
-      return plt.isPlatformMatch('ios', ['iphone', 'ipad', 'ipod'], ['windows phone']);
+      return isIos(plt);
     },
     versionParser(plt: Platform) {
       return plt.matchUserAgentVersion(/OS (\d+)_(\d+)?/);
@@ -136,7 +136,7 @@ export const PLATFORM_CONFIGS: { [key: string]: PlatformConfig } = {
       keyboardHeight: 500,
     },
     isMatch(plt: Platform) {
-      return plt.isPlatformMatch('ipad');
+      return isIpad(plt);
     }
   },
 
@@ -148,7 +148,7 @@ export const PLATFORM_CONFIGS: { [key: string]: PlatformConfig } = {
       'phablet'
     ],
     isMatch(plt: Platform) {
-      return plt.isPlatformMatch('iphone');
+      return isIphone(plt);
     }
   },
 

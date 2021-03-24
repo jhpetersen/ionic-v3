@@ -1,6 +1,12 @@
-[![npm version](https://badge.fury.io/js/ionic-angular.svg)](https://badge.fury.io/js/ionic-angular)
-
 # Ionic
+
+## Ionic v3 fork with patches
+
+### iPad platform detection
+Since iOS 13 there is a change in user agent of iPad devices (see https://github.com/ionic-team/cordova-plugin-ionic-webview/issues/556#issuecomment-708282656) which causes wrong cordova platform information (see bug report https://github.com/ionic-team/ionic-v3/issues/1104).
+This bug was fixed in Ionic >=4 but not for v3, so user osben already ported the fix in two patches (see https://github.com/osben/ionic-v3/commits/patch-1 and https://github.com/osben/ionic-v3/commits/patch-2), which are integrated hereby based on Ionic v3.9.10.
+
+## Original description
 
 [Ionic](https://ionicframework.com/) is the open-source mobile app development framework that makes it easy to
 build top quality native and progressive web apps with web technologies.
